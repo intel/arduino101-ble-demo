@@ -1,0 +1,29 @@
+<ion-view title="Arduino101 IO control">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left"class="button button-icon icon ion-android-menu"></button>
+	</ion-nav-buttons>
+    <ion-content padding="true">
+        <div class="list">
+            <div class="item item-body">
+                <img class="full-image" id="intro_image" src="../www/img/intro.png" />
+            </div>
+            <div class="item item-body">
+                <b>This application allows you to control IO ports on an Arduino101, via Automation IO BLE service.</b>
+            </div>
+        </div>
+        <div class="list">
+            <a class="item item-icon-left" ng-click="applicationProperties.EnableBluetooth()">
+                <i class="icon {{homeListIcon.first}}"></i>
+                {{firstStepDescription}}
+            </a>
+            <a class="item item-icon-left" href="#/app/boards">
+                <i class="icon ion-android-arrow-forward {{homeListIcon.second}}"></i>
+                Select the board to connect to
+            </a>
+            <a class="item item-icon-left" href="#/app/pins">
+                <i class="icon ion-android-arrow-forward {{homeListIcon.third}}"></i>
+                Control GPIO
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view title="Automation IO boards">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+    <ion-content padding="false">
+        <ul class="list" ng-show="bar.visible">
+            <li class="item">
+                <b>{{bar.text}}</b>
+            </li>
+        </ul>
+        <div class="card" ng-repeat="foundBoard in applicationProperties.FOUND_BOARDS">
+            <div class="item item-divider">
+                {{foundBoard.name}}
+            </div>
+            <div class="item item-text-wrap align-left item-button-right">
+                <b>Device address:</b><br/>{{foundBoard.address}}
+                <button class="button connect-button button-small {{button.style}}" ng-click="Action(foundBoard)" ng-show="button.visible">{{button.text}}</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

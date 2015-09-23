@@ -1,0 +1,42 @@
+Green pins are not in use </br>
+Grey pins are in use </br>
+You can add green pins or </br> remove grey ones pressing them </br>
+
+<h4>Digital Input pins</h4>
+<div class="row">
+    <div class="col">
+        <div class="button-bar">
+            <a class="button button-small {{pin.style}}" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.type == 'DIGITAL' && pin.direction == 'IN'" ng-click="ToggleSelectedPin(pin)">{{pin.number}}</a>
+        </div>
+    </div> 
+</div>
+
+<h4>Analog Input pins</h4>
+<div class="row">
+    <div class="col">
+        <div class="button-bar">
+            <a class="button button-small {{pin.style}}" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.type == 'ANALOG' && pin.direction == 'IN'" ng-click="ToggleSelectedPin(pin)">{{pin.number}}</a>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<h4>Digital Output pins</h4>
+<div class="row">
+    <div class="col">
+        <div class="button-bar">
+            <a class="button button-small {{pin.style}}" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.type == 'DIGITAL' && pin.direction == 'OUT'" ng-click="ToggleSelectedPin(pin)">{{pin.number}}</a>
+        </div>
+    </div>
+</div>
+
+<h4>Analog Output pins</h4>
+<div class="row">
+    <div class="col">
+        <div class="button-bar">
+            <a class="button button-small {{pin.style}}" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.type == 'ANALOG' && pin.direction == 'OUT'" ng-click="ToggleSelectedPin(pin)">{{pin.number}}</a>
+        </div>
+    </div>
+</div>
+-->

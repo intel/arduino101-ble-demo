@@ -1,0 +1,21 @@
+<ion-view title="Close the application">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+    <ion-content padding="true">
+        <div class="list card">
+            <div class="item item-icon-left item-text-wrap">
+                <i class="icon ion-help"></i>
+                Are you sure you want to close the application?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button button-small button-block button-stable" ng-click="Yes()">Yes</button>
+            </div>
+            <div class="col">
+                <button class="button button-small button-block button-positive" ng-click="No()">No</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

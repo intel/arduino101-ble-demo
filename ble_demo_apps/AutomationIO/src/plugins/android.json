@@ -1,0 +1,16 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "org.apache.cordova.splashscreen": {},
+        "org.apache.cordova.statusbar": {},
+        "org.apache.cordova.device": {},
+        "org.apache.cordova.dialogs": {}
+    },
+    "dependent_plugins": {}
+}

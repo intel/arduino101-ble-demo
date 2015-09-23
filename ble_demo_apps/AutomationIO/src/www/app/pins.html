@@ -1,0 +1,66 @@
+<ion-view title="Pins">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+    <ion-content padding="true">
+        <button class="button button-block button-positive" ng-click="AddRemovePinPopup()">
+            Add / remove pins to manage
+        </button>
+        <div class="list">
+            <div class="item item-divider">
+                Digital Input pins
+                <span class="badge badge-pins badge-dark">{{GetNumberOfUsed('DIGITAL','IN');}}</span>
+            </div>
+                <div class="item" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.inUse == 'YES' && pin.type == 'DIGITAL' && pin.direction == 'IN'">
+                    <div class="pin">
+                        <b>Pin:</b> {{pin.number}}
+                    </div>
+                    <div class="value">
+                        <b>Value:</b> {{pin.value}}
+                    </div>
+                </div>
+            
+            <div class="item item-divider">
+                Analog Input pins
+                <span class="badge badge-pins badge-dark">{{GetNumberOfUsed('ANALOG','IN');}}</span>
+            </div>
+                <div class="item" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.inUse == 'YES' && pin.type == 'ANALOG' && pin.direction == 'IN'">
+                    <div class="pin">
+                        <b>Pin:</b> {{pin.number}}
+                    </div>
+                    <div class="value">
+                        <b>Value:</b> {{pin.value}}
+                    </div>
+                </div>
+            
+<!--
+            <div class="item item-divider">
+                Digital Output pins
+                <span class="badge badge-pins badge-dark">{{GetNumberOfUsed('DIGITAL','OUT');}}</span>
+            </div>
+                <div class="item" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.inUse == 'YES' && pin.type == 'DIGITAL' && pin.direction == 'OUT'">
+                    <div class="pin">
+                        <b>Pin:</b> {{pin.number}}
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" ng-model="pin.checked" ng-change="DigitalChange(pin)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+            
+            <div class="item item-divider">
+                Analog Output pins
+                <span class="badge badge-pins badge-dark">{{GetNumberOfUsed('ANALOG','OUT');}}</span>
+            </div>
+                <div class="item" ng-repeat="pin in applicationProperties.BOARD.pins" ng-if="pin.inUse == 'YES' && pin.type == 'ANALOG' && pin.direction == 'OUT'">
+                    <div class="pin">
+                        <b>Pin:</b> {{pin.number}}
+                    </div>
+                    <input type="range" name="analog" min="0" max="255" value="{{pin.value}}" ng-change="AnalogChange(pin)" ng-model="pin.value">
+                </div>
+-->
+        </div>
+    </ion-content>
+</ion-view>

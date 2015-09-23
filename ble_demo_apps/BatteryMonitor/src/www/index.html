@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+        <title>BLE demo application</title>
+
+        <link href="lib/ionicframework/ionic.min.css" rel="stylesheet">
+        <script src="lib/ionicframework/ionic.bundle.min.js"></script>
+        <script src="bower_components/angular-svg-round-progressbar/build/roundProgress.min.js"></script>
+
+        <link href="css/app.css" rel="stylesheet">
+
+        <script src="js/app.js"></script>
+        <script src="cordova.js"></script>  
+    </head>
+
+    <body ng-controller="appController">
+        <div class="bar bar-header bar-positive">
+            <h1 class="title">BLE demo application</h1>
+        </div>
+        <div id="content" class="content has-header padding">
+            <div class="row">
+                <div class="col">
+                    <button ng-show="showConnectButton" ng-click="connect()" class="button button-block button-balanced">
+                      Connect
+                    </button>
+                    <button ng-hide="showConnectButton" ng-click="disconnect()" class="button button-block button-assertive">
+                      Disconnect
+                    </button>
+                </div>
+            </div>
+            <div id="console" class="row">
+                <div class="col"><pre>{{console}}</pre></div>
+            </div>
+            <div ng-show="showBatteryLevel" id="data" class="row">
+                <div class="col">
+                    <div id="battery_level_wrapper">
+                        <div id="battery_level_label">Battery Level</div>
+                        <div id="battery_level_value">{{batteryLevel}}</div>
+                        <div round-progress max="100" current="batteryLevel" color="#45ccce" bgcolor="#eaeaea" radius="100" stroke="30" semi="true" rounded="false" clockwise="true" iterations="1" animation="easeInOutQuart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

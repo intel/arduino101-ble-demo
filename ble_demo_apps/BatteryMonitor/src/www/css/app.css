@@ -1,0 +1,49 @@
+#content
+{
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#console
+{
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+#data
+{
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 100%;
+}
+
+.box 
+{
+    height:300px;
+    padding: 10px
+}
+
+#battery_level_wrapper
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#battery_level_label
+{
+    font-size: 20px;
+}
+
+#battery_level_value
+{
+    margin-top: 10px;
+    font-size: 22px;
+    position: relative;
+    top: 75px;
+}
+
+.round-progress
+{
+    margin: auto;
+    display: block;
+}

@@ -1,0 +1,182 @@
+.box 
+{
+    height:300px;
+    padding: 10px;
+}
+
+#intro_image
+{
+    width: 90%;
+    margin: 15px auto 15px auto;
+    display: block;
+}
+
+#intro_card > div
+{
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.ion-android-arrow-forward
+{
+    color: dodgerblue;
+}
+
+.item > .text
+{
+    float: left;
+}
+
+.item > .text ~ a
+{
+    float: right;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+#console
+{
+    padding: 10px;
+}
+
+#console #log
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 25px;
+    line-height: 25px;
+}
+
+#console .message
+{
+    font-size: 13px;
+    padding-left: 5px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    height: 100%;
+}
+
+#console .message:last-of-type
+{
+    margin-bottom: 20px;
+}
+
+#console .message.normal
+{
+    border-left-color: #E6E6E6;
+}
+
+#console .message.warning
+{
+    border-left-color: #FFC900;
+}
+
+#console .message.error
+{
+    border-left-color: #EF473A;
+}
+
+.toggle, .track
+{
+    height: 20px !important;
+}
+
+.handle
+{
+    height: 16px !important;
+}
+
+.pin
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.value
+{
+    float: left;
+    margin-left: 10px;
+}
+
+/* Bluetooth icon colors */
+.ion-bluetooth.grey
+{
+    color: #444444;
+}
+
+.ion-bluetooth.orange
+{
+    color: #FFC900;
+}
+
+.ion-bluetooth.blue
+{
+    color: #387EF5;
+}
+
+.ion-bluetooth.green
+{
+    color: #33CD5F;
+}
+
+/* Connect button */
+.connect-button
+{
+    margin-top: 10px;
+}
+
+/* Green checkbox icon */
+.ion-android-checkbox-outline
+{
+    color: #33CD5F;
+}
+
+/* All icons */
+.item-icon-left .icon, .item-icon-right .icon, .bar .button.button-icon::before
+{
+    font-size: 24px;
+}
+
+/* Button bars */
+.button-bar > .button
+{
+    flex: none;
+    padding: 0;
+}
+
+.button-bar > .button-small
+{
+    min-width: 26px;
+}
+
+/* Pins badges */
+.badge-pins
+{
+    border-radius: 25px;
+    width: 23px;
+    height: 23px;
+    margin-top: -2px;
+    margin-right: -20px;
+    padding-top: 4px;
+    padding-right: 4px;
+}
+
+/* Show toasts setting */
+#show-toasts-label
+{
+    margin-top: 1px;
+    float: left;
+}
+
+#show-toasts-button
+{
+    float: right;
+    width: 40px;
+    min-width: 40px;
+    min-height: 20px;
+    line-height: 20px;
+}

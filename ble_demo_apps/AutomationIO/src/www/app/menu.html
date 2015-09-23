@@ -1,0 +1,57 @@
+<ion-side-menus>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable"></ion-nav-bar>
+	<ion-nav-buttons side="right" ng-controller="IconController">
+		<button class="button button-icon ion-bluetooth {{bluetoothIcon.class}}" ng-click="ShowBluetoothStatus()"></button>
+	</ion-nav-buttons>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-positive">
+      <h1 class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+		<ion-list>
+			<ion-item nav-clear class="item item-icon-left" menu-close href="#/app/home">
+				<i class="icon icon-menu ion-home"></i>
+				Home
+			</ion-item>
+			<div class="item item-divider">GPIO</div>
+			<ion-item nav-clear class="item item-icon-left" menu-close href="#/app/pins">
+				<i class="icon icon-menu ion-toggle-filled"></i>
+				Manage pins
+			</ion-item>
+			<div class="item item-divider">Bluetooth</div>
+			<ion-item nav-clear class="item item-icon-left" menu-close href="#/app/boards">
+				<i class="icon icon-menu ion-android-list"></i>
+				Boards list
+			</ion-item>
+			<ion-item nav-clear class="item item-icon-left" menu-close href="#/app/console">
+				<i class="icon icon-menu ion-bluetooth"></i>
+				Console
+			</ion-item>
+			<div class="item item-divider">Settings</div>
+			<ion-item class="item item-icon-left" ng-click="applicationProperties.ToggleToast();">
+				<i class="icon icon-menu ion-gear-a"></i>
+				<div id="show-toasts-label">Show toasts</div>
+                <button id="show-toasts-button" class="button button-small {{applicationProperties.TOASTS.buttonStyle}}">{{applicationProperties.TOASTS.show}}</button>
+			</ion-item>
+            <ion-item class="item item-icon-left" ng-click="applicationProperties.ToggleBluetooth();">
+				<i class="icon icon-menu ion-gear-a"></i>
+				<div id="show-toasts-label">BLE off on close</div>
+                <button id="show-toasts-button" class="button button-small {{applicationProperties.BLUETOOTH.buttonStyle}}">{{applicationProperties.BLUETOOTH.disableOnClose}}</button>
+			</ion-item>	
+            <div class="item item-divider">Misc</div>
+            <ion-item nav-clear class="item item-icon-left" menu-close href="#/app/about">
+				<i class="icon icon-menu ion-information"></i>
+				About
+			</ion-item>
+			<ion-item nav-clear class="item item-icon-left" menu-close href="#/app/close">
+				<i class="icon icon-menu ion-android-exit"></i>
+				Close
+			</ion-item>
+		</ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
