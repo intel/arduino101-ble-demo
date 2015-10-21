@@ -4,8 +4,8 @@
 <!--To change the contents of this file, see the documentation on the intelxdk.config.additions.xml file.-->
 <intelxdk:version value="1.0"/>
 <intelxdk:cordova-cli version="4.1.2"/>
-<name>BLE_demo_application</name>
-<description>A Starter project for building Cordova app using Ionic Framework + AngularJS.</description>
+<name>Arduino 101 BatteryMonitor example</name>
+<description>An application for use with the CurieBle BatteryMonitor example sketch on Arduino/Genuino 101</description>
 <author>Intel XDK</author>
 <content src="index.html"/>
 <access origin="*"/>

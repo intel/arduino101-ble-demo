@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2015 Intel Corporation.  All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
 angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appController', function($scope) 
 {    
     var BATTERY_SERVICE_UUID = "0000180f-0000-1000-8000-00805f9b34fb";
@@ -10,11 +28,13 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
     $scope.console = "";
     $scope.showBatteryLevel = "false";
     $scope.showConnectButton = "true";
+    $scope.deviceList = [];
     
     var console = function(message)
     {
-        $scope.console += message + '\n';
-        $scope.$apply();
+// Uncomment the following to enable console messages (e.g. for debug)
+//        $scope.console += message + '\n';
+//        $scope.$apply();
     };
     
     var data = function(batteryLevel)
@@ -32,7 +52,7 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
             $scope.showBatteryLevel = "false";
         
         $scope.$apply();
-    }
+    };
     
     var onPlatformReady = function()
     {
@@ -44,14 +64,15 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
     var onBluetoothEnabled = function()
     {        
         console("Bluetooth is enabled");
-        console("Scanning for Atlas Edge...");
-        ble.startScan([], function(device) 
+        console("Scanning for Arduino 101...");
+        $scope.deviceList = [];
+        $scope.$apply();
+        ble.scan([], 5, function(device)
         {
             if (device.name == DEVICE_NAME)
             {
-                console("Atlas Edge was found", "log");
-                remoteDevice = device;
-                ble.stopScan(onStopScan, onStoppingScanError);
+                $scope.deviceList.push(device);
+                $scope.$apply();
             }
         }, onScanError);
     };
@@ -72,21 +93,10 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
         console("Error occured during scanning:\n" + error.toString());
     };
 
-    var onStoppingScanError = function(error)
-    {
-        console("Error occured during stopping the scanning:\n" + error.toString());
-    };
-
-    var onStopScan = function()
-    {
-        console("Connecting to Atlas Edge...");
-        ble.connect(remoteDevice.id, onConnectSuccess, onConnectFailure);
-    };
-
     var onConnectSuccess = function(peripheralData)
     {
-        console("Connected to Atlas Edge");
-        console("Starting sending data from Atlas Edge...");
+        console("Connected to Arduino 101");
+        console("Starting sending data from Arduino 101...");
         $scope.showConnectButton = "false";
         $scope.showBatteryLevel = "true";
         $scope.$apply();
@@ -117,7 +127,7 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
 
     var onConnectFailure = function(error)
     {
-        console("Could not connect to Atlas Edge:\n" + error.toString());
+        console("Could not connect to Arduino 101:\n" + error.toString());
         $scope.showConnectButton = "true";
         $scope.showBatteryLevel = "false";
         $scope.$apply();
@@ -125,28 +135,36 @@ angular.module('app', ['ionic', 'angular-svg-round-progress']).controller('appCo
     
     var onDisconnectSuccess = function()
     {
-        console("Disconnected from Atlas Edge");
+        console("Disconnected from Arduino 101");
+        $scope.deviceList = [];
         $scope.showConnectButton = "true";
         clean({console: false, data: true});
     };
     
     var onDisconnectFailure = function(error)
     {
-        console("Could not disconnect from Atlas Edge:\n" + error.toString());
+        console("Could not disconnect from Arduino 101:\n" + error.toString());
     };
     
     var onIsConnectedFailure = function()
     {
-        console("Atlas Edge is not connected");
+        console("Arduino 101 is not connected");
     };
     
     var onIsConnectedSuccess = function()
     {
-        console("Disconnecting from Atlas Edge...");
+        console("Disconnecting from Arduino 101...");
         ble.disconnect(remoteDevice.id, onDisconnectSuccess, onDisconnectFailure);
     };
+
+    $scope.connect = function(device)
+    {
+        console("Connecting to Arduino 101...");
+        remoteDevice = device;
+        ble.connect(device.id, onConnectSuccess, onConnectFailure);
+    };
     
-    $scope.connect = function()
+    $scope.scanDevices = function()
     {
         clean({console: true, data: true});
         

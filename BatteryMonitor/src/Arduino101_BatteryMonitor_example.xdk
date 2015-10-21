@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww32/webapp/templates-ionic-angularjs-starter/sample.zip",
       "projectGuid": "d54f6a2f-533d-424f-a233-06ab2b398435",
-      "lastModifiedDate": 1445442515923,
+      "lastModifiedDate": 1445445456145,
       "creationDate": 1438869300697
     },
     "sourceDirectory": "www",
@@ -61,7 +61,7 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "BLE_demo_application",
+        "appName_": "Arduino 101 BatteryMonitor example",
         "appID_": "demo.ionicangularjsstarter",
         "appAccess_": {
           "mode": "legacy",
@@ -80,7 +80,7 @@
         "appVersion_": "0.0.1",
         "appVersionCode_": "1",
         "crosswalkVersion_": "11",
-        "appDescription_": "A Starter project for building Cordova app using Ionic Framework + AngularJS.",
+        "appDescription_": "An application for use with the CurieBle BatteryMonitor example sketch on Arduino/Genuino 101",
         "appAuthor_": "Intel XDK"
       },
       "Android-Crosswalk": {
@@ -92,7 +92,7 @@
           "android-targetSdkVersion": "19",
           "android-installLocation": "auto"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
         "appAccess_": {
@@ -149,7 +149,7 @@
         "runtime_": "Cordova 3.x",
         "name_": "Windows8",
         "preferences_": {},
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
         "appAccess_": {
