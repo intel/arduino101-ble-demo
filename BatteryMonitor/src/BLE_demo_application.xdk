@@ -1,33 +1,52 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww32/webapp/templates-ionic-angularjs-starter/sample.zip",
       "projectGuid": "d54f6a2f-533d-424f-a233-06ab2b398435",
-      "lastModifiedDate": 1438869695632,
+      "lastModifiedDate": 1445442515923,
       "creationDate": 1438869300697
     },
     "sourceDirectory": "www",
     "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
     "projectFiles": {},
-    "projectDirectories": {},
+    "projectDirectories": {
+      "www/xdk": {
+        "settings": {
+          "project": {
+            "XDK-generated": "true"
+          }
+        }
+      }
+    },
     "libraries": [],
     "cordovaPlugins": [
       {
         "id": "com.megster.cordova.ble",
-        "version": "",
+        "version": "0.1.9",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": [],
         "custom": "true",
-        "name": "Bluetooth Low Energy (BLE) Central Plugin",
+        "name": "BLE",
         "origin": "com.megster.cordova.ble",
         "originType": "cordova.io",
-        "sourceLocation": ""
+        "sourceLocation": "",
+        "permissions": {
+          "android:name": [
+            "android.permission.BLUETOOTH",
+            "android.permission.BLUETOOTH_ADMIN"
+          ]
+        },
+        "topLevel": true,
+        "checksum": "55725cc0",
+        "gitref": "",
+        "cordovaVersion": ">=3.1.0",
+        "description": "Bluetooth Low Energy (BLE) Central Plugin"
       }
     ],
     "serviceMethods": [],
@@ -44,11 +63,14 @@
         "isActive_": true,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -73,11 +95,14 @@
         "isActive_": true,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -101,11 +126,14 @@
         "isActive_": true,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -124,11 +152,14 @@
         "isActive_": true,
         "appName_": "BLE_demo_application",
         "appID_": "demo.ionicangularjsstarter",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -147,11 +178,14 @@
         "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -167,11 +201,14 @@
         "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -187,11 +224,14 @@
         "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -207,21 +247,46 @@
         "isActive_": false,
         "appName_": "BLE_demo_application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK"
+      },
+      "WP81": {
+        "platform_": "wp81",
+        "runtime_": "Cordova 3.x",
+        "name_": "WP81",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "BLE_demo_application",
+        "appID_": "not.yet.specified",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.0.1",
+        "cordovaCLIVersion_": "5.1.1"
       }
     },
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
-    "projectTags": []
+    "projectTags": [],
+    "testDirectory": "test"
   }
 }

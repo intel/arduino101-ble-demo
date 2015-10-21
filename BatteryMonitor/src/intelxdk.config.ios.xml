@@ -9,7 +9,7 @@
 <author>Intel XDK</author>
 <content src="index.html"/>
 <access origin="*"/>
-<intelxdk:plugin intelxdk:name="Bluetooth Low Energy (BLE) Central Plugin" intelxdk:value="com.megster.cordova.ble"/>
+<intelxdk:plugin intelxdk:name="BLE" intelxdk:value="com.megster.cordova.ble" intelxdk:version="0.1.9" intelxdk:checksum="55725cc0" intelxdk:type="file"/>
 <preference name="ios-target" value="6"/>
 <preference name="ios-configuration" value="adhoc"/>
 <!--creationInfo:{"src":"https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww32/webapp/templates-ionic-angularjs-starter/sample.zip","projectTypeName":"com.intel.xdk.projecttype.jsapp"}-->
