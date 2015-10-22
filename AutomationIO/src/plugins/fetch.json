@@ -1,0 +1,50 @@
+{
+    "org.apache.cordova.dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.dialogs@0.2.6"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.splashscreen@0.3.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar@0.1.7"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-x-toast": {
+        "source": {
+            "type": "local",
+            "path": "/home/dan/git/github/arduino101-ble-demo/AutomationIO/src/www/lib/cordova.plugin.toast"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.randdusing.bluetoothle": {
+        "source": {
+            "type": "local",
+            "path": "/home/dan/git/github/arduino101-ble-demo/AutomationIO/src/www/lib/com.randdusing.bluetoothle"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device@0.2.9"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

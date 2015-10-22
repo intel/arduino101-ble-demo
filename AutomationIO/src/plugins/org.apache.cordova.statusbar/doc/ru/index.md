@@ -66,7 +66,7 @@
 *   StatusBar.hide
 *   StatusBar.show
 
-## Параметры
+## Свойства
 
 *   StatusBar.isVisible
 
@@ -94,7 +94,7 @@
 
 *   iOS
 
-## Краткий пример
+## Быстрый пример
 
     StatusBar.overlaysWebView(true);
     StatusBar.overlaysWebView(false);

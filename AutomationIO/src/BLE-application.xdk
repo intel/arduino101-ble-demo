@@ -1,18 +1,26 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww32/webapp/templates-ionic-angularjs-starter/sample.zip",
       "projectGuid": "1cb03374-c508-4179-8256-c69b538924a6",
-      "lastModifiedDate": 1443006818874,
+      "lastModifiedDate": 1445524517405,
       "creationDate": 1440570347785
     },
     "sourceDirectory": "www",
     "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
     "projectFiles": {},
-    "projectDirectories": {},
+    "projectDirectories": {
+      "www/xdk": {
+        "settings": {
+          "project": {
+            "XDK-generated": "true"
+          }
+        }
+      }
+    },
     "libraries": [],
     "cordovaPlugins": [
       {
@@ -22,7 +30,16 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.splashscreen",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "b3c1af48",
+        "gitref": "",
+        "name": "Splashscreen",
+        "cordovaVersion": ">=3.0.0",
+        "description": "Cordova Splashscreen Plugin"
       },
       {
         "id": "org.apache.cordova.statusbar",
@@ -31,7 +48,16 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.statusbar",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "a6847552",
+        "gitref": "",
+        "name": "StatusBar",
+        "cordovaVersion": ">=3.0.0",
+        "description": "Cordova StatusBar Plugin"
       },
       {
         "id": "org.apache.cordova.device",
@@ -40,7 +66,16 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.device",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "8869829",
+        "gitref": "",
+        "name": "Device",
+        "cordovaVersion": ">=3.0.0",
+        "description": "Cordova Device Plugin"
       },
       {
         "id": "org.apache.cordova.dialogs",
@@ -49,35 +84,63 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
-      },
-      {
-        "id": "cordova.plugin.toast",
-        "version": "",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
         "dependedBy": [],
-        "custom": "true",
-        "name": "Toast plugin",
-        "origin": "lib/cordova.plugin.toast",
-        "originType": "local",
-        "sourceLocation": ""
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.dialogs",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "ed2d60ae",
+        "gitref": "",
+        "name": "Notification",
+        "cordovaVersion": ">=3.0.0",
+        "description": "Cordova Notification Plugin"
       },
       {
         "id": "com.randdusing.bluetoothle",
-        "version": "",
+        "version": "2.1.0",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": [],
         "custom": "true",
-        "name": "BLE plugin",
-        "origin": "lib/com.randdusing.bluetoothle",
+        "name": "Bluetooth LE",
+        "origin": "./www/lib/com.randdusing.bluetoothle",
         "originType": "local",
-        "sourceLocation": ""
+        "sourceLocation": "",
+        "permissions": {
+          "android:name": [
+            "android.permission.BLUETOOTH",
+            "android.permission.BLUETOOTH_ADMIN"
+          ]
+        },
+        "topLevel": true,
+        "checksum": "cf7631d",
+        "gitref": "",
+        "cordovaVersion": ">=3.0.0",
+        "description": "Use the Bluetooth Low Energy plugin to connect your Cordova app to new Bluetooth devices like heart rate monitors, thermometers, etc...",
+        "author": "Rand Dusing"
+      },
+      {
+        "id": "cordova-plugin-x-toast",
+        "name": "Toast",
+        "version": "2.2.0",
+        "originType": "local",
+        "origin": "./www/lib/cordova.plugin.toast",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-x-toast",
+        "selectedState": "Included",
+        "checksum": "ac4b8bec",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Eddy Verbruggen",
+        "permissions": {},
+        "description": "\n    This plugin allows you to show a Toast.\n    A Toast is a little non intrusive buttonless popup which automatically disappears.\n  ",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
       }
     ],
     "serviceMethods": [],
@@ -95,11 +158,14 @@
         "isActive_": true,
         "appName_": "Arduino101 IO control",
         "appID_": "android.arduino101.io.control",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [
           {
             "relPath": "img/icon/36x36.png",
@@ -146,14 +212,17 @@
           "android-targetSdkVersion": "22",
           "android-installLocation": "auto"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Arduino101 IO control",
         "appID_": "crosswalk.arduino101.io.control",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [
           {
             "relPath": "img/icon/36x36.png",
@@ -202,11 +271,14 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "ble.application",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -225,11 +297,14 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "demo.ionicangularjsstarter",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -248,11 +323,14 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -268,11 +346,14 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -288,11 +369,14 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -308,21 +392,46 @@
         "isActive_": false,
         "appName_": "BLE-application",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK"
+      },
+      "WP81": {
+        "platform_": "wp81",
+        "runtime_": "Cordova 3.x",
+        "name_": "WP81",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "BLE-application",
+        "appID_": "not.yet.specified",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.0.1",
+        "cordovaCLIVersion_": "5.1.1"
       }
     },
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
-    "projectTags": []
+    "projectTags": [],
+    "testDirectory": "test"
   }
 }
