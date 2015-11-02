@@ -63,11 +63,10 @@ module.exports = {
         // Some platforms take an array of button label names.
         // Other platforms take a comma separated list.
         // For compatibility, we convert to the desired type based on the platform.
-        if (platform.id == "amazon-fireos" || platform.id == "android" || platform.id == "ios" ||
-            platform.id == "windowsphone" || platform.id == "firefoxos" || platform.id == "ubuntu" ||
-            platform.id == "windows8" || platform.id == "windows") {
+        if (platform.id == "android" || platform.id == "ios" || platform.id == "windowsphone" || platform.id == "firefoxos" || platform.id == "ubuntu") {
 
             if (typeof _buttonLabels === 'string') {
+                var buttonLabelString = _buttonLabels;
                 _buttonLabels = _buttonLabels.split(","); // not crazy about changing the var type here
             }
         } else {
@@ -106,7 +105,6 @@ module.exports = {
      * @param {Integer} count       The number of beeps.
      */
     beep: function(count) {
-        var defaultedCount = count || 1;
-        exec(null, null, "Notification", "beep", [ defaultedCount ]);
+        exec(null, null, "Notification", "beep", [count]);
     }
 };

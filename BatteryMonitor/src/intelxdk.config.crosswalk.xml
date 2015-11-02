@@ -9,7 +9,7 @@
 <author>Intel XDK</author>
 <content src="index.html"/>
 <access origin="*"/>
-<intelxdk:plugin intelxdk:name="Bluetooth Low Energy (BLE) Central Plugin" intelxdk:value="com.megster.cordova.ble"/>
+<intelxdk:plugin intelxdk:name="BLE" intelxdk:value="com.megster.cordova.ble" intelxdk:version="0.1.9" intelxdk:checksum="55725cc0" intelxdk:type="file"/>
 <preference name="android-minSdkVersion" value="14"/>
 <preference name="android-targetSdkVersion" value="19"/>
 <preference name="android-installLocation" value="auto"/>

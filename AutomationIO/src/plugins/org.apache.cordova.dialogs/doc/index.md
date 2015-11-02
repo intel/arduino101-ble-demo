@@ -19,19 +19,27 @@
 
 # org.apache.cordova.dialogs
 
-This plugin provides access to some native dialog UI elements
-via a global `navigator.notification` object.
-
-Although the object is attached to the global scoped `navigator`, it is not available until after the `deviceready` event.
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        console.log(navigator.notification);
-    }
+This plugin provides access to some native dialog UI elements.
 
 ## Installation
 
     cordova plugin add org.apache.cordova.dialogs
+
+### Firefox OS Quirks
+
+Create __www/manifest.webapp__ as described in 
+[Manifest Docs](https://developer.mozilla.org/en-US/Apps/Developing/Manifest).
+Add permisions: 
+
+    "permissions": {
+        "desktop-notification": {
+			"description": "Describe why you need to enable notifications"
+		}
+	}
+
+Edit __www/index.html__ and add following in `head` section:
+
+	<link rel="stylesheet" type="text/css" href="css/notification.css" />
 
 ## Methods
 
@@ -80,7 +88,6 @@ function, which is typically less customizable.
 - Tizen
 - Windows Phone 7 and 8
 - Windows 8
-- Windows
 
 ### Windows Phone 7 and 8 Quirks
 
@@ -93,9 +100,6 @@ function, which is typically less customizable.
 ### Firefox OS Quirks:
 
 Both native-blocking `window.alert()` and non-blocking `navigator.notification.alert()` are available.
-
-### BlackBerry 10 Quirks
-`navigator.notification.alert('text', callback, 'title', 'text')` callback parameter is passed the number 1.
 
 ## navigator.notification.confirm
 
@@ -144,7 +148,6 @@ indexing, so the value is `1`, `2`, `3`, etc.
 - Tizen
 - Windows Phone 7 and 8
 - Windows 8
-- Windows
 
 ### Windows Phone 7 and 8 Quirks
 
@@ -153,12 +156,6 @@ indexing, so the value is `1`, `2`, `3`, etc.
         window.confirm = navigator.notification.confirm;
 
 - Calls to `alert` and `confirm` are non-blocking, so the result is only available asynchronously.
-
-### Windows Quirks
-
-- On Windows8/8.1 it is not possible to add more than three buttons to MessageDialog instance.
-
-- On Windows Phone 8.1 it's not possible to show dialog with more than two buttons.
 
 ### Firefox OS Quirks:
 
@@ -172,7 +169,7 @@ Displays a native dialog box that is more customizable than the browser's `promp
 
 - __message__: Dialog message. _(String)_
 
-- __promptCallback__: Callback to invoke with index of button pressed (1, 2, or 3) or when the dialog is dismissed without a button press (0). _(Function)_
+- __promptCallback__: Callback to invoke when a button is pressed. _(Function)_
 
 - __title__: Dialog title _(String)_ (Optional, defaults to `Prompt`)
 
@@ -187,8 +184,6 @@ in the prompt dialog box. The `results` object passed to the callback
 contains the following properties:
 
 - __buttonIndex__: The index of the pressed button. _(Number)_ Note that the index uses one-based indexing, so the value is `1`, `2`, `3`, etc.
-
-
 
 - __input1__: The text entered in the prompt dialog box. _(String)_
 
@@ -212,7 +207,6 @@ contains the following properties:
 - Android
 - Firefox OS
 - iOS
-- Windows Phone 7 and 8
 
 ### Android Quirks
 

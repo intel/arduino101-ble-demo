@@ -9,12 +9,12 @@
 <author>Emutex</author>
 <content src="index.html"/>
 <access origin="*"/>
-<intelxdk:plugin intelxdk:name="SplashScreen" intelxdk:value="org.apache.cordova.splashscreen" intelxdk:version="0.3.0"/>
-<intelxdk:plugin intelxdk:name="StatusBar" intelxdk:value="org.apache.cordova.statusbar" intelxdk:version="0.1.7"/>
-<intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.9"/>
-<intelxdk:plugin intelxdk:name="Dialogs (notification)" intelxdk:value="org.apache.cordova.dialogs" intelxdk:version="0.2.6"/>
-<intelxdk:plugin intelxdk:name="Toast plugin" intelxdk:value="lib/cordova.plugin.toast" intelxdk:type="local"/>
-<intelxdk:plugin intelxdk:name="BLE plugin" intelxdk:value="lib/com.randdusing.bluetoothle" intelxdk:type="local"/>
+<intelxdk:plugin intelxdk:name="Splashscreen" intelxdk:value="org.apache.cordova.splashscreen" intelxdk:version="0.3.0" intelxdk:checksum="b3c1af48" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="StatusBar" intelxdk:value="org.apache.cordova.statusbar" intelxdk:version="0.1.7" intelxdk:checksum="a6847552" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.9" intelxdk:checksum="8869829" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Notification" intelxdk:value="org.apache.cordova.dialogs" intelxdk:version="0.2.6" intelxdk:checksum="ed2d60ae" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Bluetooth LE" intelxdk:value="com.randdusing.bluetoothle" intelxdk:version="2.1.0" intelxdk:checksum="cf7631d" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Toast" intelxdk:value="cordova-plugin-x-toast" intelxdk:version="2.2.0" intelxdk:checksum="ac4b8bec" intelxdk:type="file"/>
 <preference name="ios-target" value="6"/>
 <preference name="ios-configuration" value="adhoc"/>
 <!--creationInfo:{"src":"https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww32/webapp/templates-ionic-angularjs-starter/sample.zip","projectTypeName":"com.intel.xdk.projecttype.jsapp"}-->

@@ -17,7 +17,6 @@
 #define NOTIFICATION_H
 
 #include <QtQuick>
-#include <QMediaPlayer>
 #include <cplugin.h>
 #include <cordova.h>
 
@@ -44,8 +43,8 @@ public slots:
     void confirm(int scId, int ecId, const QString &message, const QString &title, const QStringList &buttonLabels);
     void prompt(int scId, int ecId, const QString &message, const QString &title, const QStringList &buttonLabels, const QString &defaultText);
 
-    void notificationDialogButtonPressed(int buttonId, const QString &text, bool prompt) {
-        if (prompt) {
+    void notificationDialogButtonPressed(int buttonId, const QString &text) {
+        if (text.size()) {
             QVariantMap res;
             res.insert("buttonIndex", buttonId);
             res.insert("input1", text);
@@ -57,8 +56,8 @@ public slots:
     }
 
 private:
+    QQmlComponent *_component;
     int _alertCallback;
-    QMediaPlayer _player;
 };
 
 #endif
